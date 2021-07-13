@@ -78,31 +78,24 @@
         if(empty($_POST["pass"]))
         {
             $hasError = true;
-            $err_pass="Password Required";
-        }
-        elseif(strlen($_POST["pass"]) <= 7)
-        {
+            $err_pass = "Password Required";
+        } elseif (strlen($_POST["pass"]) <= 7) {
             $hasError = true;
-            $err_pass="Password must contain at least 8 character";
-        }
-        elseif(strpos($_POST["pass"], '#') == false)
-        {
+            $err_pass = "Password must contain at least 8 character";
+        } elseif (strpos($_POST["pass"], '#') == false && strpos($_POST['pass'], '?') == false) {
             $hasError = true;
-            $err_pass= "Password must contain # character or one ? character";
-        }
-        else
-        {
+            $err_pass = "Password must contain # character or one ? character";
+        } else {
             $upper = 0;
             $lower = 0;
             $number = 0;
             $arr = str_split($_POST["pass"]);
-            foreach($arr as $a)
-            {
-                if($a >= 'A' && $a <= 'Z')
+            foreach ($arr as $a) {
+                if (ctype_upper($a))
                     $upper++;
-                elseif($a >= 'a' && $a <= 'z')
+                elseif (ctype_lower($a))
                     $lower++;
-                elseif ($a >= 0)
+                elseif (ctype_digit($a))
                     $number++;
             }
             if($upper >= 1 && $lower >= 1 && $number >= 1)
