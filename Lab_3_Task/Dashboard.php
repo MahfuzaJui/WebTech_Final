@@ -1,22 +1,9 @@
-<?php include 'header.php';  ?>
-
 <html>
-   <form>
-   
-          
-   <a href="alldep.php">  <input type="button" name="All_departments" value="All Departments"> </a>
-   
-   <a href="Allstudents.php"> <input type="button" name="All_students" value="All Students">  </a>
-   
-   
-   <a href="AddStudent.php"> <input type="button" name="Add_student" value="Add Student">  </a>
-   
-   
-  
-  </form>
-  </body>
- </head> 
+    <head></head>
+<body>
+    <a href="AllStudent.php">AllStudent</a><br>
+    <a href="AddStudent.php">AddStudent</a><br>
+	<a href="AllDepartment.php">AllDepartment</a><br>
+	<a href="AddDepartment.php">AddDepartment</a><br>
+</body>
 </html>
-
-
-<?php include 'footer.php'; ?>

@@ -1,33 +1,19 @@
-<?php
-    require_once 'controllers/UserControllers.php';
-    
+<?php 
+	//include 'main_header.php';
+	include 'controllers/UserController.php';
 ?>
-<html>
-	<head></head>
-	<h5><?php echo $err_db;?></h5>
-	<body>
-	  <form  method="post" action="">
-	  <fieldset>
-	  <table>
-	  <td> Log In </td>
-	<tr>
-	   <td>User Name</td>
-	   <td>: <input type="text" name="uname" value="<?php echo $uname; ?>" > </td>
-	   <td><span> <?php echo $err_uname;?> </span></td>
-	</tr>
-				
-	<tr>
-           <td>Password</td>
-           <td>: <input type="password" name="pass"  >  </td>
-	  <td><span> <?php echo $err_pass;?> </span></td>
-	</tr>
-				
-       <tr>
-	   <td colspan="2" align="right"> <input type="submit" name="btn_Login" value="Log In"> </td>
-					
-      </tr>
-   </table>
-  </fieldset>
- </form>
- </body>
-</html>
+
+	<h1 >Login</h1>
+	<h5 ><?php echo $err_db;?></h5>
+	<form action="" method="post" >
+	
+		<h4>Username</h4> 
+		<input type="text" name="uname" value="<?php echo $uname;?>" >
+		<span class="text-danger"><?php echo $err_uname;?></span>
+	
+		<h4>Password</h4> 
+		<input type="password" name ="pass" value ="<?php echo $pass;?>" >
+        <span class="text-danger"><?php echo $err_pass;?></span>
+			
+		<input type="submit" name="btn_login" value="Login" >	
+	</form>
