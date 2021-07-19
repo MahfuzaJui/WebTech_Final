@@ -17,6 +17,7 @@
         else
         {
             $name=htmlspecialchars($_POST["name"]);
+			
         }
 		if(!$hasError){
 		$rs = insertCategory($name);
@@ -50,7 +51,7 @@
 	}
 }
 	function insertCategory($name){
-		$query = "insert into categories values (NULL,'$name')";
+		$query = "insert into categories values (NULL,\"$name\")";
 		return execute($query);
 	}
 	function getAllCategories(){
@@ -64,7 +65,7 @@
 		return $rs[0]; 
 	}
 	function updateCategory($name,$id){
-		$query = "update categories set name= '$name' where id = $id ";
+		$query = "update categories set name= \"$name\" where id = $id ";
 		
 		return execute($query);
 	}
