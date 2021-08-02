@@ -12,104 +12,20 @@
 	$hasError=false;
 	if(isset($_POST["sign_up"])){
 		if(empty($_POST["name"])){
-            $hasError = true;
-            $err_name="Name Required";
-        }
-        elseif(strlen($_POST["name"]) <=2)
-        {
-            $hasError = true;
-            $err_name = "Name must be greater than 2 characters";
-        }
-        else
-        {
-            $name=htmlspecialchars($_POST["name"]);
-        }
-		if(empty($_POST["uname"]))
-        {
-            $hasError = true;
-            $err_uname="Username Required";
-        }
-        elseif(strlen($_POST["uname"]) <= 5)
-        {
-            $hasError = true;
-            $err_uname="Username must contain at least 6 character";
-        }
-        elseif(strpos($_POST["uname"], ' ') !== false)
-        {
-            $hasError = true;
-            $err_uname= "Space is not allowed in Username";
-        }
-        else
-        {
-            $uname=htmlspecialchars($_POST["uname"]);
-        }
-        if(empty($_POST["email"]))
-        {
-            $hasError = true;
-            $err_email="Email Required";
-        }
-        else if(strpos($_POST["email"], "@"))
-        {
-            $flag = false;
-            $pos = strpos($_POST["email"], "@");
-            $str = $_POST["email"];
-            for($i = $pos; $i < strlen($str); $i++)
-            {
-                if($str[$i]== ".")
-                {
-                    $flag = true;
-                    break;
-                }
-            }
-            if($flag == true)
-            {
-                $email=htmlspecialchars($_POST["email"]);
-            }
-            else
-            {
-                $hasError = true;
-                $err_email="Email must contain @ character and . character";
-            }
-        }
-        else
-        {
-            $email=$_POST["email"];
-        }
-        if(empty($_POST["pass"]))
-        {
-            $hasError = true;
-            $err_pass = "Password Required";
-        } elseif (strlen($_POST["pass"]) <= 7) {
-            $hasError = true;
-            $err_pass = "Password must contain at least 8 character";
-        } elseif (strpos($_POST["pass"], '#') == false && strpos($_POST['pass'], '?') == false) {
-            $hasError = true;
-            $err_pass = "Password must contain # character or one ? character";
-        } else {
-            $upper = 0;
-            $lower = 0;
-            $number = 0;
-            $arr = str_split($_POST["pass"]);
-            foreach ($arr as $a) {
-                if (ctype_upper($a))
-                    $upper++;
-                elseif (ctype_lower($a))
-                    $lower++;
-                elseif (ctype_digit($a))
-                    $number++;
-            }
-            if($upper >= 1 && $lower >= 1 && $number >= 1)
-            {
-                $pass = $_POST["pass"];
-            }
-            else
-            {
-                $err_pass= "Password must contain 1 number and combination of uppercase and lowercase alphabet";
-            }
-        }
+			$err_name="Name Required";
+			$hasError=true;
+		}else{
+			$name=$_POST["name"];
+		}
+		if(empty($_POST["uname"])){
+			$err_uname="Username Required";
+			$hasError=true;
+		}else{
+			$uname=$_POST["uname"];
+		}
 		if(!$hasError){
-			$rs = insertUser($name,$uname,$email,$pass);
-			
+			$rs = insertUser($name,$uname,$_POST["email"],$_POST["pass"]);
+			//var_dump($rs);
 			if($rs === true){
 				header("Location: login.php");
 			}
@@ -140,19 +56,36 @@
 			$err_db = "Username password invalid";
 		}
 	}
+
+	function validateEmail($email){
+		$pos_at = strpos($email,"@"); 
+		$pos_dot = strpos($email,".",$pos_at); 
+		if($pos_dot > $pos_at){
+			return true;
+		}
+		return false;
+	}
 	
 	function insertUser($name,$uname,$email,$pass){
-		$query  = "insert into user values (NULL,'$name','$uname','$email','$pass')";
+		$query  = "insert into users values (NULL,'$name','$uname','$email','$pass')";
 		return execute($query);	
 	}
 	function authenticateUser($uname,$pass){
-		$query ="select * from user where uname='$uname' and pass='$pass'";
+		$query ="select * from users where username='$uname' and password='$pass'";
 		$rs = get($query);
 		if(count($rs)>0){
 			return true;
 		}
 		return false;
 		
+	}
+	function checkUsername($uname){
+		$query = "select name from users where username='$uname'";
+		$rs = get($query);
+		if(count($rs) > 0){
+			return true;
+		}
+		else return false;
 	}
 	
 ?>
