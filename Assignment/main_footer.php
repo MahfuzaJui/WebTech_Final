@@ -1,8 +1,7 @@
-<html>
-<body>
-<footer class="footer">
-            <h4>Webtech sample Project</h4>
-        </footer>
-
-    </body>
+	<!--footer-->
+		<footer class="footer">
+			<h4>Webtech Dummy Project</h4>
+		</footer>
+		
+	</body>
 </html>

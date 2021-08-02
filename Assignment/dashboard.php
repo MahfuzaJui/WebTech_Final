@@ -1,6 +1,8 @@
 <?php include 'main_header.php';?>
-	<h3 >Recent Sales</h3>
-	<table>
+<!--dashboard starts -->
+<div class="center">
+	<h3 class="text">Recent Sales</h3>
+	<table class="table table-striped">
 		<thead>
 			<th>Sl#</th>
 			<th>Product Name</th>
@@ -10,17 +12,12 @@
 		</thead>
 		<tbody>
 			<td>1</td>
-			<td>Potato</td>
-			<td>60</td>
+			<td>Onion</td>
+			<td>100</td>
 			<td>10</td>
-			<td>13.7.2021</td>
-		</tbody>
-        <tbody>
-			<td>2</td>
-			<td>Chicken</td>
-			<td>300</td>
-			<td>20</td>
-			<td>13.7.2021</td>
+			<td>07.13.2021</td>
 		</tbody>
 	</table>
-	<?php include 'main_footer.php';?>
+</div>
+<!--dashboard ends -->
+<?php include 'main_footer.php';?>
