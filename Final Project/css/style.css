@@ -1,0 +1,275 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+/* @font-face {
+  src: url(fonts/Century-Gothic-400.ttf);
+  font-family: Century-Gothic-normal;
+}
+@font-face {
+  src: url(fonts/Century-Gothic-900.ttf);
+  font-family: Century-Gothic-bold;
+}
+@font-face {
+  src: url(fonts/Century-Gothic-thin.ttf);
+  font-family: Century-Gothic-thin;
+} */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 18px;
+}
+
+table.single-border,
+table.single-border th,
+table.single-border td {
+  border: 1px solid black;
+}
+
+table.single-border {
+  border-collapse: collapse;
+}
+
+.navigation {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.menu {
+  padding: 10px;
+  background-color: #b82ea1;
+}
+
+.menu ul {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu ul li {
+  margin-right: 10px;
+}
+
+.menu ul li:last-child {
+  margin: 0;
+}
+
+.menu ul li a {
+  display: block;
+  text-decoration: none;
+  color: white;
+  padding: 7px 6px;
+  box-shadow: 0 0 4px #fff3;
+  font-size: 16px;
+}
+
+.menu ul li a:hover {
+  background-color: #5f204c;
+}
+
+.main {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.main table {
+  width: 100%;
+}
+
+td input[type="radio"],
+td input[type="checkbox"],
+td label {
+  margin: 0;
+  vertical-align: middle;
+}
+
+.php-error,
+span[id*="js-error"] {
+  font-style: italic;
+}
+
+span[id*="js-error"] {
+  color: red;
+}
+
+.verify-button,
+.delete-button {
+  display: inline-block;
+  padding: 7px 10px;
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+}
+
+.verify-button {
+  background-color: #2e8d1b;
+}
+
+.delete-button {
+  background-color: red;
+}
+
+.login-btn,
+input[type="submit"] {
+  padding: 8px 0;
+  background: #b82ea1;
+  border-radius: 4px;
+  width: 300px;
+  color: #fff;
+  border-color: #b82ea1;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.login-btn:hover,
+input[type="submit"]:hover,
+input[type="submit"]:active,
+input[type="submit"]:focus,
+.login-btn:active,
+.login-btn:focus {
+  background-color: #b82ea1;
+}
+
+form td {
+  font-size: 20px !important;
+}
+
+td input {
+  width: 300px;
+  font-size: 18px;
+  padding: 4px;
+  color: #333;
+  margin: 5px 0;
+  border: 1px solid #000;
+  border-radius: 3px;
+  font-family: sofia-medium;
+}
+
+td input[type="radio"] {
+  width: inherit;
+  font-size: 18px;
+  padding: 4px;
+  color: #333;
+  margin: 5px 0;
+  border: 1px solid #000;
+  border-radius: 3px;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  border: 0.1em solid currentColor;
+}
+
+td input:focus,
+td input:active,
+td input:hover {
+  border: 1px solid #000 !important;
+  border-radius: 3px;
+  background-color: #c9e7c957;
+}
+
+tr td:first-child {
+  padding-right: 6px;
+}
+form#login {
+  width: auto;
+  margin: auto;
+}
+
+form {
+  font-family: Century-Gothic-normal;
+}
+
+.navigation {
+  width: 80%;
+  margin: 0 auto;
+}
+
+table.single-border tr,
+table.single-border td {
+  padding: 10px;
+  border: 1px solid #333;
+}
+
+.verify-button,
+.delete-button {
+  margin: 3px auto;
+  width: 90%;
+  text-align: center;
+  font-size: 12px;
+  display: block;
+}
+
+table.single-border tr:nth-child(2n) {
+  background-color: #229e401f;
+}
+
+table.single-border tr:hover {
+  background-color: #66146930;
+}
+
+.menu ul li a.active {
+  background-color: #b82ea1 !important;
+}
+
+.review {
+  width: 80%;
+  margin: 30px auto;
+  display: flex;
+  justify-content: center;
+}
+
+.review form {
+  padding: 30px 30px 50px;
+  border: 1px solid #00800005;
+  box-shadow: 0 0 1px #aeaeae;
+}
+.review form label {
+  font-size: 22px;
+}
+
+.review form select {
+  padding: 4px 10px;
+  background: #9e226ac9;
+  color: #fff;
+  border: 1px solid #b82ea1;
+  margin: 5px 0;
+}
+
+.review form input[type="submit"] {
+  width: 312px;
+  margin-top: 15px;
+}
+
+#user-details font {
+  color: #cff0c6 !important;
+  font-size: 16px !important;
+}
+
+.review-updates {
+  width: 80%;
+  margin: 30px auto;
+  box-shadow: 0 0 4px #32323224;
+  padding: 30px 30px 50px;
+}
+
+.goback-btn {
+  text-decoration: none;
+  background-color: #b82ea1;
+  color: #fff;
+  padding: 6px 12px;
+  font-size: 14px;
+  border-radius: 20px;
+  box-shadow: 0 0 1px #9e9d9d;
+}
+
+.goback-btn:hover {
+  background-color: #b82ea1;
+}
